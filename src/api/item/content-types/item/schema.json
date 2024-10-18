@@ -20,7 +20,7 @@
       "type": "text",
       "required": true
     },
-    "Tags": {
+    "Ingredients": {
       "type": "string",
       "required": false
     },

@@ -538,7 +538,7 @@ export interface ApiItemItem extends Struct.CollectionTypeSchema {
   attributes: {
     Name: Schema.Attribute.String & Schema.Attribute.Required;
     Description: Schema.Attribute.Text & Schema.Attribute.Required;
-    Tags: Schema.Attribute.String;
+    Ingredients: Schema.Attribute.String;
     Image: Schema.Attribute.Media<'images' | 'files'>;
     menu_section: Schema.Attribute.Relation<
       'manyToOne',
