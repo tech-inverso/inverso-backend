@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Tags": {
+      "type": "string",
+      "required": false
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "menu_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::menu-section.menu-section",
+      "inversedBy": "items"
+    },
+    "price": {
+      "type": "component",
+      "repeatable": true,
+      "component": "price.price",
+      "required": true
+    },
+    "alergenics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::alergenic.alergenic",
+      "mappedBy": "item"
+    }
+  }
+}

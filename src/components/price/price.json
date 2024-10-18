@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_price_prices",
+  "info": {
+    "displayName": "Price",
+    "icon": "priceTag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Value": {
+      "type": "decimal",
+      "required": true
+    },
+    "Unit": {
+      "type": "string"
+    }
+  }
+}

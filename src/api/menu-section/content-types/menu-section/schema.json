@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_sections",
+  "info": {
+    "singularName": "menu-section",
+    "pluralName": "menu-sections",
+    "displayName": "Menu Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::item.item",
+      "mappedBy": "menu_section"
+    }
+  }
+}
