@@ -4,7 +4,8 @@
   "info": {
     "singularName": "alergenic",
     "pluralName": "alergenics",
-    "displayName": "Alergenic"
+    "displayName": "Allergenic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,9 +15,9 @@
     "Name": {
       "type": "string"
     },
-    "item": {
+    "items": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::item.item",
       "inversedBy": "alergenics"
     }

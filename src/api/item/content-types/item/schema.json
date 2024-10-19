@@ -47,9 +47,9 @@
     },
     "alergenics": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::alergenic.alergenic",
-      "mappedBy": "item"
+      "mappedBy": "items"
     }
   }
 }

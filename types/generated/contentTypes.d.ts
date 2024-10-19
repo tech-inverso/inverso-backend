@@ -500,14 +500,15 @@ export interface ApiAlergenicAlergenic extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'alergenic';
     pluralName: 'alergenics';
-    displayName: 'Alergenic';
+    displayName: 'Allergenic';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Name: Schema.Attribute.String;
-    item: Schema.Attribute.Relation<'manyToOne', 'api::item.item'>;
+    items: Schema.Attribute.Relation<'manyToMany', 'api::item.item'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -547,7 +548,7 @@ export interface ApiItemItem extends Struct.CollectionTypeSchema {
     price: Schema.Attribute.Component<'price.price', true> &
       Schema.Attribute.Required;
     alergenics: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::alergenic.alergenic'
     >;
     createdAt: Schema.Attribute.DateTime;
