@@ -578,6 +578,9 @@ export interface ApiMenuSectionMenuSection extends Struct.CollectionTypeSchema {
   attributes: {
     Title: Schema.Attribute.String;
     items: Schema.Attribute.Relation<'oneToMany', 'api::item.item'>;
+    key: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

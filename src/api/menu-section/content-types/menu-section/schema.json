@@ -20,6 +20,11 @@
       "relation": "oneToMany",
       "target": "api::item.item",
       "mappedBy": "menu_section"
+    },
+    "key": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
