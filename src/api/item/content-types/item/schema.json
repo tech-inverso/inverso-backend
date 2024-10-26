@@ -50,6 +50,11 @@
       "relation": "manyToMany",
       "target": "api::alergenic.alergenic",
       "mappedBy": "items"
+    },
+    "Position": {
+      "type": "integer",
+      "unique": false,
+      "required": true
     }
   }
 }

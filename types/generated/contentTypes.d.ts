@@ -551,6 +551,7 @@ export interface ApiItemItem extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::alergenic.alergenic'
     >;
+    Position: Schema.Attribute.Integer & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
