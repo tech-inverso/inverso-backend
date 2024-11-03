@@ -525,6 +525,67 @@ export interface ApiAlergenicAlergenic extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHandsSectionHandsSection extends Struct.SingleTypeSchema {
+  collectionName: 'hands_sections';
+  info: {
+    singularName: 'hands-section';
+    pluralName: 'hands-sections';
+    displayName: 'Hands Section';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    left_side: Schema.Attribute.String & Schema.Attribute.Required;
+    right_side: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hands-section.hands-section'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInstaSectionInstaSection extends Struct.SingleTypeSchema {
+  collectionName: 'insta_sections';
+  info: {
+    singularName: 'insta-section';
+    pluralName: 'insta-sections';
+    displayName: 'Insta Section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Claim: Schema.Attribute.String & Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insta-section.insta-section'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiItemItem extends Struct.CollectionTypeSchema {
   collectionName: 'items';
   info: {
@@ -561,6 +622,37 @@ export interface ApiItemItem extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::item.item'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMainSectionMainSection extends Struct.SingleTypeSchema {
+  collectionName: 'main_sections';
+  info: {
+    singularName: 'main-section';
+    pluralName: 'main-sections';
+    displayName: 'Main Section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::main-section.main-section'
+    > &
       Schema.Attribute.Private;
   };
 }
@@ -981,7 +1073,10 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::alergenic.alergenic': ApiAlergenicAlergenic;
+      'api::hands-section.hands-section': ApiHandsSectionHandsSection;
+      'api::insta-section.insta-section': ApiInstaSectionInstaSection;
       'api::item.item': ApiItemItem;
+      'api::main-section.main-section': ApiMainSectionMainSection;
       'api::menu-section.menu-section': ApiMenuSectionMenuSection;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

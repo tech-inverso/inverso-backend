@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "insta_sections",
+  "info": {
+    "singularName": "insta-section",
+    "pluralName": "insta-sections",
+    "displayName": "Insta Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Claim": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

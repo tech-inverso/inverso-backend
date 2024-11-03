@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "hands_sections",
+  "info": {
+    "singularName": "hands-section",
+    "pluralName": "hands-sections",
+    "displayName": "Hands Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "left_side": {
+      "type": "string",
+      "required": true
+    },
+    "right_side": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
