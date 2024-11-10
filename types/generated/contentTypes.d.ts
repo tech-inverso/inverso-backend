@@ -632,6 +632,7 @@ export interface ApiMainSectionMainSection extends Struct.SingleTypeSchema {
     singularName: 'main-section';
     pluralName: 'main-sections';
     displayName: 'Main Section';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -641,6 +642,8 @@ export interface ApiMainSectionMainSection extends Struct.SingleTypeSchema {
     Description: Schema.Attribute.Text & Schema.Attribute.Required;
     Image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    Claim: Schema.Attribute.String & Schema.Attribute.Required;
+    CallToAction: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

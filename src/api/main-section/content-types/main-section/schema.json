@@ -4,7 +4,8 @@
   "info": {
     "singularName": "main-section",
     "pluralName": "main-sections",
-    "displayName": "Main Section"
+    "displayName": "Main Section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,12 +21,20 @@
       "required": true
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
+      ]
+    },
+    "Claim": {
+      "type": "string",
+      "required": true
+    },
+    "CallToAction": {
+      "type": "string",
       "required": true
     }
   }
