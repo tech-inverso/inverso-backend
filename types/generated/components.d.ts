@@ -1,15 +1,15 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
 export interface PricePrice extends Struct.ComponentSchema {
   collectionName: 'components_price_prices';
   info: {
+    description: '';
     displayName: 'Price';
     icon: 'priceTag';
-    description: '';
   };
   attributes: {
-    Value: Schema.Attribute.Decimal & Schema.Attribute.Required;
     Unit: Schema.Attribute.String;
+    Value: Schema.Attribute.Decimal & Schema.Attribute.Required;
   };
 }
 

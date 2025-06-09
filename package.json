@@ -1,6 +1,6 @@
 {
   "name": "inverso-backend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
@@ -11,10 +11,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.1.0",
-    "@strapi/plugin-users-permissions": "5.1.0",
+    "@strapi/plugin-cloud": "5.15.0",
+    "@strapi/plugin-users-permissions": "5.15.0",
     "@strapi/provider-upload-cloudinary": "^5.1.0",
-    "@strapi/strapi": "5.1.0",
+    "@strapi/strapi": "5.15.0",
     "better-sqlite3": "11.3.0",
     "pg": "^8.13.0",
     "react": "^18.0.0",
