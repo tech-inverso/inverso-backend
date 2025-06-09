@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_sections",
+  "info": {
+    "singularName": "footer-section",
+    "pluralName": "footer-sections",
+    "displayName": "Footer Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Location": {
+      "type": "string",
+      "default": "C. de Menorca, 19, 28009 Madrid",
+      "required": true
+    },
+    "Phone": {
+      "type": "string",
+      "default": "+34 604827013"
+    },
+    "OpenTime1Text": {
+      "type": "string",
+      "default": "Martes - Miércoles - Jueves:"
+    },
+    "OpenTime1Time": {
+      "type": "string",
+      "default": "15:00 - 00:30"
+    },
+    "OpenTime2Text": {
+      "type": "string",
+      "default": "Viernes - Sábado: "
+    },
+    "OpenTime2Time": {
+      "type": "string",
+      "default": "13:30 - 01:30"
+    },
+    "OpenTime3Text": {
+      "type": "string",
+      "default": "Domingo - Lunes:"
+    },
+    "OpenTime3Time": {
+      "type": "string",
+      "default": "Cerrado"
+    }
+  }
+}

@@ -403,6 +403,50 @@ export interface ApiAlergenicAlergenic extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
+  collectionName: 'footer_sections';
+  info: {
+    displayName: 'Footer Section';
+    pluralName: 'footer-sections';
+    singularName: 'footer-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer-section.footer-section'
+    > &
+      Schema.Attribute.Private;
+    Location: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'C. de Menorca, 19, 28009 Madrid'>;
+    OpenTime1Text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Martes - Mi\u00E9rcoles - Jueves:'>;
+    OpenTime1Time: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'15:00 - 00:30'>;
+    OpenTime2Text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Viernes - S\u00E1bado: '>;
+    OpenTime2Time: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'13:30 - 01:30'>;
+    OpenTime3Text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Domingo - Lunes:'>;
+    OpenTime3Time: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Cerrado'>;
+    Phone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'+34 604827013'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHandsSectionHandsSection extends Struct.SingleTypeSchema {
   collectionName: 'hands_sections';
   info: {
@@ -1081,6 +1125,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::alergenic.alergenic': ApiAlergenicAlergenic;
+      'api::footer-section.footer-section': ApiFooterSectionFooterSection;
       'api::hands-section.hands-section': ApiHandsSectionHandsSection;
       'api::insta-section.insta-section': ApiInstaSectionInstaSection;
       'api::item.item': ApiItemItem;
